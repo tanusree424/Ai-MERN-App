@@ -18,6 +18,9 @@ app.use(cors({
 app.use("/api/ai", aiRoutes);
 const PORT = process.env.PORT || 5000;
 
+app.get("/", async (req,res) => {
+    res.send("Hello world")
+})
 
 const serverConnect = async () => {
     try {
