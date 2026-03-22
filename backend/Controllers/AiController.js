@@ -9,10 +9,11 @@ dotenv.config();
 const askAI  = async (req,res) => {
     try {
         const {prompt} = req.body;
+        console.log(process.env.API_KEY);
       const response = await axios.post(
   "https://openrouter.ai/api/v1/chat/completions",
   {
-      model: "openrouter/free",
+     model: "openrouter/free",
     // model:"gpt-4o",
     messages: [
       {
@@ -32,7 +33,7 @@ const askAI  = async (req,res) => {
         const answer = response.data.choices[0].message.content;
         return res.json({answer})
     } catch (error) {
-        console.log("FULL ERROR:", error.response?.data || error.message);
+        console.log("FULL ERROR:", error.response?.data || error?.message);
     res.status(500).send(error.response?.data || error.message);
     }
 
