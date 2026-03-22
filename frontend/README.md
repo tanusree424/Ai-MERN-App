@@ -1,16 +1,112 @@
-# React + Vite
+# AI FLOW MERN
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Simple Ai Mern Stack Application where users can enter a prompt , visualize the flow using React Flow
 
-Currently, two official plugins are available:
+----
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- AI response using OpenRouter API
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Flow Visualize using React Flow
 
-## Expanding the ESLint configuration
+- Save and reposne using MongoDB
+- Clean UI using Tailwind CSS
+- Markdown support for formatted Responses4
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Tech Stack
+
+- Frontend: React , ReactFlow ,Tailwindcss
+- Backend: Node js , Express js
+- Database: MongoDB
+- API: OpenRouter  (Free AI Models)
+
+
+## Floder Structure
+
+```
+Frontend/ -> React Frotend
+Backend/ -> Node/Express Backend
+```
+
+ ## Setup Instructions
+
+ 1. Clone Repo
+ ```bash
+ cd backend
+npm install
+```
+
+Create `.env` file:
+```
+PORT = 5000
+MONGOURI= mongodb+srv://tbasuchoudhury_db_user:Tanusree97@cluster0.9n6c5cu.mongodb.net/?appName=Cluster0  || mongodb://localhost:27017/ai-mern
+API_KEY = your_openrouter_api_key
+```
+
+Run Backend:
+``` bash
+npm run dev
+```
+3.Frontend Setup
+```
+bash
+cd frontend
+npm run dev
+```
+### API EndPoint
+
+### ASK AI
+```
+POST /api/ai/ask-ai
+
+```
+Body:
+```JSON
+{
+    "prompt":"your prompt"
+}
+```
+---
+
+### Save Chat
+
+
+```
+POST /api/ai/save
+
+
+Body:
+```JSON
+{
+    "prompt":question,
+    "answer":"answer
+}
+
+```
+
+---
+
+## 📸 Screenshots
+
+
+
+---
+
+## 🎯 Future Improvements
+
+- Authentication system
+- Chat history UI
+- Dark mode
+- Deployment
+
+---
+
+## 👩‍💻 Author
+
+Tanusree Basu Choudhury
+
+
+ 
+
