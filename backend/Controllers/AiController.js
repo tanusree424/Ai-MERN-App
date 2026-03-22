@@ -1,5 +1,5 @@
 import axios from "axios";
-import chats from "../Model/ChatModel.js";
+import chats from "../model/ChatModel.js";
 import { model } from "mongoose";
 import { json } from "express";
 import dotenv from "dotenv"
