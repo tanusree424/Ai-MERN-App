@@ -9,12 +9,13 @@ dotenv.config();
 const askAI  = async (req,res) => {
     try {
         const {prompt} = req.body;
-        console.log(process.env.API_KEY);
+        console.log("API KEY:",process.env.API_KEY);
       const response = await axios.post(
   "https://openrouter.ai/api/v1/chat/completions",
   {
-     model: "openrouter/free",
+    // model: "openrouter/free",
     // model:"gpt-4o",
+    model: "openrouter/auto" ,
     messages: [
       {
         role: "user",
