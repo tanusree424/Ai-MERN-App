@@ -152,14 +152,14 @@ return (
 
       <button
         onClick={runFlow}
-        className="bg-blue-500 active:scale-95 hover:bg-blue-600 text-white py-2 rounded-lg text-sm md:text-base transition"
+        className="bg-blue-500 active:scale-95 hover:bg-blue-600 cursor-pointer text-white py-2 rounded-lg text-sm md:text-base transition"
       >
         {loading ? "Thinking..." : "Run Flow"}
       </button>
 
       <button
         onClick={saveChat}
-        className="bg-green-500 active:scale-95 hover:bg-green-600 text-white py-2 rounded-lg text-sm md:text-base transition"
+        className="bg-green-500 active:scale-95 cursor-pointer hover:bg-green-600 text-white py-2 rounded-lg text-sm md:text-base transition"
       >
         Save Chat
       </button>
