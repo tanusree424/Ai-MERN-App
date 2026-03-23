@@ -133,58 +133,61 @@ function App() {
     }
   }
 
-  return (
-    <div className="h-screen flex bg-gray-100">
+return (
+  <div className="h-screen flex flex-col md:flex-row bg-gray-100">
 
-      {/* Sidebar */}
-      <div className="w-80 bg-white shadow-xl p-5 flex flex-col gap-4 border-r">
+    {/* Sidebar / Top Panel */}
+    <div className="w-full md:w-80 bg-white shadow-md p-4 flex flex-col gap-3 border-b md:border-r z-10">
 
-        <h1 className="text-xl font-bold text-blue-600 text-center">
-          AI Flow
-        </h1>
+      <h1 className="text-lg md:text-xl font-bold text-blue-600 text-center">
+        AI Flow
+      </h1>
 
-        <textarea
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask anything..."
-          className="w-full h-40 p-3 border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
-        />
+      <textarea
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        placeholder="Ask anything..."
+        className="w-full h-24 md:h-40 p-2 md:p-3 text-sm md:text-base border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
 
-        <button
-          onClick={runFlow}
-          className="bg-blue-500 hover:bg-blue-600 cursor-pointer text-white py-2 rounded-lg transition font-medium"
-        >
-          {loading ? "Thinking..." : "Run Flow"}
-        </button>
+      <button
+        onClick={runFlow}
+        className="bg-blue-500 active:scale-95 hover:bg-blue-600 text-white py-2 rounded-lg text-sm md:text-base transition"
+      >
+        {loading ? "Thinking..." : "Run Flow"}
+      </button>
 
-        <button
-          onClick={saveChat}
-          className="bg-green-500 hover:bg-green-600 cursor-pointer text-white py-2 rounded-lg transition font-medium"
-        >
-          Save Chat
-        </button>
+      <button
+        onClick={saveChat}
+        className="bg-green-500 active:scale-95 hover:bg-green-600 text-white py-2 rounded-lg text-sm md:text-base transition"
+      >
+        Save Chat
+      </button>
 
-        {/* Small info */}
-        <p className="text-xs text-gray-400 text-center mt-auto">
-          Powered by AI ✨
-        </p>
-      </div>
-
-      {/* Flow Area */}
-      <div className="flex-1 relative">
-
-        {/* Background effect */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-gray-100"></div>
-
-        <ReactFlow nodes={nodes} edges={edges} fitView>
-
-          <Background variant="dots" gap={20} size={1} />
-          <Controls  />
-
-        </ReactFlow>
-      </div>
     </div>
-  );
+
+    {/* Flow Area */}
+    <div className="flex-1 relative overflow-hidden">
+
+      {/* background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-gray-100"></div>
+
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        fitView
+        panOnDrag
+        zoomOnScroll
+        minZoom={0.5}
+        maxZoom={1.5}
+      >
+        <Background />
+        <Controls />
+      </ReactFlow>
+
+    </div>
+  </div>
+);
 }
 
 export default App
